@@ -10,12 +10,16 @@
                 <th style="width: 160px">Action</th>
             </tr>
         </thead>
-         <task-item 
+        <template v-if="listTaskSearchSort">
+        <task-item 
+         
          v-for="(item, index) in listTaskSearchSort" 
          v-bind:key="item.id"
          v-bind:listTask="item"
          v-bind:index="index+1"
          />
+        </template>
+        
         
         <!-- <tbody>
            

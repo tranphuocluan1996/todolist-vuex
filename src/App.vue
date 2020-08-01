@@ -43,7 +43,7 @@
 </template>
 
 <script>
-
+import {mapState} from 'vuex'
 import TaskList from './components/TaskList'
 import CompAdd from './components/CompAdd'
 import CompSearch from './components/CompSearch'
@@ -56,24 +56,23 @@ export default {
     }
   },
   computed: {
-	//   ...mapState([
-	// 	  'listTask',
-	// 	  'stringSearch'
-	//   ]),
-	//   listTaskSearch(){
-	// 	  const {stringSearch} = this;
-	// 	  console.log('stringSearch = ',stringSearch);
-	// 	  var newItem = [];
-	// 	  this.listTask.forEach(function(item, index){
-	// 		  if(item.name.includes(stringSearch) === true){
-	// 			  newItem.push(item);
-	// 		  }
-			 
-	// 	  });
-	// 	   console.log('newItem',newItem);
-	// 	  return newItem;
-	//   }
+	  ...mapState([
+		  'listTask'
+	  ])
   },
+	watch: {
+		listTask: function (newTasks) {
+			var taskString =  JSON.stringify(newTasks);
+				localStorage.setItem('tasks',taskString)
+		}
+
+		
+	},
+
+
+
+
+
 
   components:{
 	  CompSortBy,

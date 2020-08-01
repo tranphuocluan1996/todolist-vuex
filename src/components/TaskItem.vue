@@ -2,7 +2,7 @@
    <tbody>
       <tr>
             <td class="text-center">{{index}}</td>
-            <td>{{listTask.name}}</td>
+            <td>{{listTask.taskName}}</td>
             <td class="text-center"><span v-bind:class="getColorButtonLevel">{{listTask.level}}</span></td>
             <td>
                 <button
