@@ -63,11 +63,15 @@ export default {
     watch: {
         taskSelected:function(newData,oldData ){
             if(newData !== null){
-                this.taskName = newData.name;
+                this.taskName = newData.taskName;
                 this.level = newData.level
             }
         }
     },
+
+    
+
+    
     methods: {
          ...mapActions([
             'changeIsShowForm',
@@ -84,6 +88,7 @@ export default {
                 level:this.level
             }
             this.handleUpdateOfEdit(data);
+            this.handleClickCancel();
           
             console.log('handleUpdate',this.taskSelected);
         },
@@ -91,10 +96,11 @@ export default {
         handleAddItemInListTask(){
             let data = {
                 id: uuidv4(),
-                name:this.taskName,
+                taskName:this.taskName,
                 level:this.level
             }
             this.handleAddItem(data);
+            
             this.handleClickCancel();
 
 

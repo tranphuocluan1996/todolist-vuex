@@ -3,25 +3,25 @@ var uniqid = require("uniqid");
 var listTask = [
     {
         id:uniqid(),
-        name:" A Đi chợ",
+        taskName:" A Đi chợ",
         level:"High",
 
     },
     {
          id:uniqid(),
-        name:"B Nấu cơm",
+        taskName:"B Nấu cơm",
         level:"Medium",
         
     },
     {
          id:uniqid(),
-        name:"C Xem ti vi",
+        taskName:"C Xem ti vi",
         level:"Normal",
         
     },
     {
          id:uniqid(),
-        name:"D Rửa chén",
+        taskName:"D Rửa chén",
         level:"High",
         
     }
